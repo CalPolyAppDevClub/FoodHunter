@@ -12,6 +12,8 @@ import Firebase
 
 class PostTableViewController: UITableViewController{
     
+    @IBOutlet var addBarButton: UIBarButtonItem!
+    
     var currentPosts: [Post] = []
     
     override func viewDidLoad() {
@@ -43,6 +45,13 @@ class PostTableViewController: UITableViewController{
         })
     }
     
+    @IBAction func navBarButtonPressed(_ sender: UIBarButtonItem) {
+        
+        if sender == addBarButton {
+            self.performSegue(withIdentifier: "addButtonSegue", sender: self)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return currentPosts.count
     }
@@ -52,11 +61,13 @@ class PostTableViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("cellForRowAt", indexPath.row)
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
             cell.setup(record: currentPosts[indexPath.row])
             return cell
         }
         else {
+            print("DEBUG: unable to create PostCell!")
             return UITableViewCell()
         }
     }
