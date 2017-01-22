@@ -15,15 +15,10 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var startLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     
-    
     func setup(record: Post) {
         foodLabel.text = record.food
         
-        
-        
-        
         startLabel.text = PostCell.convertDate(date: record.start)
-        
         
         locationLabel.text = record.location.alias
     }

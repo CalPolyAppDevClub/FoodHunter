@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RUg-qC-GAy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RUg-qC-GAy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,16 +23,104 @@
                             <outlet property="delegate" destination="8Ao-jw-XDN" id="jxv-E0-X0D"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="nwv-X5-ClQ"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="nwv-X5-ClQ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ncS-kd-8Fy">
+                            <connections>
+                                <action selector="navBarButtonPressed:" destination="8Ao-jw-XDN" id="5kx-gc-jv1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addBarButton" destination="ncS-kd-8Fy" id="uqU-Kz-0Ki"/>
+                        <segue destination="oX8-J6-0Xs" kind="show" identifier="addButtonSegue" id="lnQ-Gk-NYW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C71-gr-k4A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="556" y="-241"/>
         </scene>
+        <!--Add Post View Controller-->
+        <scene sceneID="7AW-ii-Uk8">
+            <objects>
+                <viewController id="oX8-J6-0Xs" customClass="addPostViewController" customModule="FoodHunter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="75I-2z-OjY"/>
+                        <viewControllerLayoutGuide type="bottom" id="gv7-Ru-v8x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="89k-8f-AWJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Where is it?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nKH-gx-PPp">
+                                <rect key="frame" x="139" y="218.5" width="97" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OyI-JY-LDL">
+                                <rect key="frame" x="121" y="268.5" width="134" height="30"/>
+                                <state key="normal" title="When does it start?"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VwM-Zf-3fF">
+                                <rect key="frame" x="124" y="318.5" width="128" height="30"/>
+                                <state key="normal" title="When does it end?"/>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What's the event called?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nh0-b1-QX4">
+                                <rect key="frame" x="98" y="368.5" width="179" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Any other deets?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UB3-FP-UAb">
+                                <rect key="frame" x="37.5" y="418.5" width="300" height="111"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What food?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BuV-SI-5uI">
+                                <rect key="frame" x="140" y="168.5" width="96" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UB3-FP-UAb" firstAttribute="height" secondItem="89k-8f-AWJ" secondAttribute="height" multiplier="1:6" id="0Ma-H5-LNd"/>
+                            <constraint firstItem="nKH-gx-PPp" firstAttribute="centerX" secondItem="OyI-JY-LDL" secondAttribute="centerX" id="2wo-Zg-DpM"/>
+                            <constraint firstItem="BuV-SI-5uI" firstAttribute="centerX" secondItem="89k-8f-AWJ" secondAttribute="centerX" id="8zU-cC-8PT"/>
+                            <constraint firstItem="OyI-JY-LDL" firstAttribute="top" secondItem="nKH-gx-PPp" secondAttribute="bottom" constant="20" id="DJm-b5-C3i"/>
+                            <constraint firstItem="UB3-FP-UAb" firstAttribute="top" secondItem="nh0-b1-QX4" secondAttribute="bottom" constant="20" id="EZs-at-7FW"/>
+                            <constraint firstItem="UB3-FP-UAb" firstAttribute="centerX" secondItem="89k-8f-AWJ" secondAttribute="centerX" id="HCu-3P-Fp9"/>
+                            <constraint firstItem="VwM-Zf-3fF" firstAttribute="centerX" secondItem="89k-8f-AWJ" secondAttribute="centerX" id="YSS-ud-PKs"/>
+                            <constraint firstItem="nKH-gx-PPp" firstAttribute="top" secondItem="BuV-SI-5uI" secondAttribute="bottom" constant="20" id="jrY-07-RxR"/>
+                            <constraint firstItem="VwM-Zf-3fF" firstAttribute="top" secondItem="OyI-JY-LDL" secondAttribute="bottom" constant="20" id="lMm-a0-e2q"/>
+                            <constraint firstItem="VwM-Zf-3fF" firstAttribute="centerY" secondItem="89k-8f-AWJ" secondAttribute="centerY" id="oHh-tT-k2Q"/>
+                            <constraint firstItem="nh0-b1-QX4" firstAttribute="centerX" secondItem="89k-8f-AWJ" secondAttribute="centerX" id="oYn-QA-Zj4"/>
+                            <constraint firstItem="OyI-JY-LDL" firstAttribute="centerX" secondItem="89k-8f-AWJ" secondAttribute="centerX" id="pu9-Fo-mLg"/>
+                            <constraint firstItem="UB3-FP-UAb" firstAttribute="width" secondItem="89k-8f-AWJ" secondAttribute="width" multiplier="1:1.25" id="rdN-aE-a3G"/>
+                            <constraint firstItem="nKH-gx-PPp" firstAttribute="centerX" secondItem="89k-8f-AWJ" secondAttribute="centerX" id="taJ-9E-ear"/>
+                            <constraint firstItem="nh0-b1-QX4" firstAttribute="top" secondItem="VwM-Zf-3fF" secondAttribute="bottom" constant="20" id="ycz-0u-k8q"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="KnX-XY-tgs">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="wfL-RX-8d4"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="detailTextView" destination="UB3-FP-UAb" id="Rbw-Ag-tSs"/>
+                        <outlet property="eventTextField" destination="nh0-b1-QX4" id="vuI-u3-dWh"/>
+                        <outlet property="foodTextField" destination="BuV-SI-5uI" id="LGo-91-SDk"/>
+                        <outlet property="locationTextField" destination="nKH-gx-PPp" id="K4s-d1-oHR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yvq-rD-prn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1406" y="-242"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="xcR-TI-2Qq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wz3-nH-rcL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="RUg-qC-GAy" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CAL-56-04G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -41,8 +130,9 @@
                         <segue destination="8Ao-jw-XDN" kind="relationship" relationship="rootViewController" id="GPh-ti-P9y"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wz3-nH-rcL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-263" y="-242"/>
+            <point key="canvasLocation" x="-271" y="-242"/>
         </scene>
     </scenes>
 </document>
