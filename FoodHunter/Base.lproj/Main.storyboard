@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RUg-qC-GAy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RUg-qC-GAy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -60,10 +60,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OyI-JY-LDL">
                                 <rect key="frame" x="121" y="268.5" width="134" height="30"/>
                                 <state key="normal" title="When does it start?"/>
+                                <connections>
+                                    <action selector="dateFieldClicked:" destination="oX8-J6-0Xs" eventType="touchUpInside" id="EYd-SH-kR2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VwM-Zf-3fF">
                                 <rect key="frame" x="124" y="318.5" width="128" height="30"/>
                                 <state key="normal" title="When does it end?"/>
+                                <connections>
+                                    <action selector="dateFieldClicked:" destination="oX8-J6-0Xs" eventType="touchUpInside" id="6Z2-wu-UZ4"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What's the event called?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nh0-b1-QX4">
                                 <rect key="frame" x="98" y="368.5" width="179" height="30"/>
@@ -109,14 +115,91 @@
                     </navigationItem>
                     <connections>
                         <outlet property="detailTextView" destination="UB3-FP-UAb" id="Rbw-Ag-tSs"/>
+                        <outlet property="endDateButton" destination="VwM-Zf-3fF" id="bpR-9i-Ruh"/>
                         <outlet property="eventTextField" destination="nh0-b1-QX4" id="vuI-u3-dWh"/>
                         <outlet property="foodTextField" destination="BuV-SI-5uI" id="LGo-91-SDk"/>
                         <outlet property="locationTextField" destination="nKH-gx-PPp" id="K4s-d1-oHR"/>
+                        <outlet property="startDateButton" destination="OyI-JY-LDL" id="wwW-Q7-b6G"/>
+                        <segue destination="CFH-bD-3GP" kind="presentation" identifier="datePicker" id="oz6-9W-NM5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yvq-rD-prn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1406" y="-242"/>
+        </scene>
+        <!--Date Picker View Controller-->
+        <scene sceneID="9jV-Vm-Dfn">
+            <objects>
+                <viewController id="CFH-bD-3GP" customClass="DatePickerViewController" customModule="FoodHunter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1gu-JO-Zf6"/>
+                        <viewControllerLayoutGuide type="bottom" id="zO9-j1-clm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9wU-e5-SbE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OG-MQ-Zcf">
+                                <rect key="frame" x="166" y="40" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="827-uL-aLV">
+                                <rect key="frame" x="166" y="81" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="NVM-vZ-UY5">
+                                <rect key="frame" x="27.5" y="225.5" width="320" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="507337899.43241799">
+                                    <!--2017-01-28 23:11:39 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="dateChanged:" destination="CFH-bD-3GP" eventType="valueChanged" id="FWe-hR-yqE"/>
+                                </connections>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTc-cz-7Ge">
+                                <rect key="frame" x="165" y="458" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="cancelAction:" destination="CFH-bD-3GP" eventType="touchUpInside" id="mWE-G1-dKa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOj-k7-b1n">
+                                <rect key="frame" x="165" y="533" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="submitAction:" destination="CFH-bD-3GP" eventType="touchUpInside" id="ewi-qx-YoL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1OG-MQ-Zcf" firstAttribute="centerX" secondItem="9wU-e5-SbE" secondAttribute="centerX" id="0J6-ZV-fyB"/>
+                            <constraint firstItem="GTc-cz-7Ge" firstAttribute="top" secondItem="NVM-vZ-UY5" secondAttribute="bottom" constant="16" id="8k1-SE-2hP"/>
+                            <constraint firstItem="827-uL-aLV" firstAttribute="top" secondItem="1OG-MQ-Zcf" secondAttribute="bottom" constant="20" id="9Oj-Jn-Awv"/>
+                            <constraint firstItem="1OG-MQ-Zcf" firstAttribute="top" secondItem="1gu-JO-Zf6" secondAttribute="bottom" constant="20" id="CjP-Mn-24w"/>
+                            <constraint firstItem="827-uL-aLV" firstAttribute="centerX" secondItem="9wU-e5-SbE" secondAttribute="centerX" id="UGr-0O-AOY"/>
+                            <constraint firstItem="NVM-vZ-UY5" firstAttribute="centerY" secondItem="9wU-e5-SbE" secondAttribute="centerY" id="efa-Gf-dMY"/>
+                            <constraint firstItem="GTc-cz-7Ge" firstAttribute="centerX" secondItem="9wU-e5-SbE" secondAttribute="centerX" id="g9C-VM-fC4"/>
+                            <constraint firstItem="zOj-k7-b1n" firstAttribute="centerX" secondItem="9wU-e5-SbE" secondAttribute="centerX" id="i7d-x1-7oq"/>
+                            <constraint firstItem="NVM-vZ-UY5" firstAttribute="centerX" secondItem="9wU-e5-SbE" secondAttribute="centerX" id="rc1-wm-uYx"/>
+                            <constraint firstItem="zOj-k7-b1n" firstAttribute="top" secondItem="GTc-cz-7Ge" secondAttribute="bottom" constant="45" id="w2d-Pu-Ksg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="GTc-cz-7Ge" id="CcJ-wK-hAx"/>
+                        <outlet property="datePicker" destination="NVM-vZ-UY5" id="F5i-ad-aUK"/>
+                        <outlet property="descriptionLabel" destination="827-uL-aLV" id="jO2-LT-cBV"/>
+                        <outlet property="submitButton" destination="zOj-k7-b1n" id="FmQ-KJ-XOL"/>
+                        <outlet property="titleLabel" destination="1OG-MQ-Zcf" id="p0a-sr-Z1f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UQV-8X-q4F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2197.5999999999999" y="-239.73013493253376"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xcR-TI-2Qq">
