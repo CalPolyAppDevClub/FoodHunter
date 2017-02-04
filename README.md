@@ -14,10 +14,9 @@ Note: `pod setup` may take a long time to complete.
 Another option is to run: `git clone https://github.com/CocoaPods/Specs.git ~/.cocoapods/repos/master` from your home directory and then run `pod setup` from the project root directory.
 
 # Updating Your Git Branch
-Add a remote branch to your local Git repository
+Add a remote branch to your local Git repository (Only need to do this once)
 ```
-git remote add upstream
-git@github.com:CalPolyAppDevClub/FoodHunter.git
+git remote add upstream git@github.com:CalPolyAppDevClub/FoodHunter.git
 ```
 Then pull from upstream and update your fork so you have the latest version!
 ```
