@@ -25,13 +25,63 @@ class addPostViewController: UIViewController {
         
         //setup keyboard links
         foodTextField.becomeFirstResponder()
+        
+        let keyboardDismisser = UITapGestureRecognizer(target: self, action: #selector(addPostViewController.dismissKeyboard))
+        self.view.addGestureRecognizer(keyboardDismisser)
     }
     
+    @IBAction func didEndEditingText(_ sender: UITextField) {
+        if let text = sender.text
+        {
+            switch (sender) {
+            case foodTextField:
+                newPost.food = text
+            case locationTextField:
+                newPost.location.alias = text
+            case eventTextField:
+                newPost.provider = text
+            default: break
+            }
+        }
+    }
+
+    func dismissKeyboard()
+    {
+        self.view.endEditing(true)
+    }
+    
+    //When a date button is pressed
     @IBAction func dateFieldClicked(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "datePicker", sender: self)
+        //based on what date button we clicked, perform different actions.
+        switch (sender) {
+        case startDateButton:
+            self.performSegue(withIdentifier: "startDate", sender: self)
+        case endDateButton:
+            self.performSegue(withIdentifier: "endDate", sender: self)
+        default: break
+        }
     }
     
+    //When a segue is triggered
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if seque == UIStoryboardSegu
+        
+        if let identifier = segue.identifier {
+            
+            let destination = segue.destination as! DatePickerViewController
+            
+            switch(identifier) {
+            case "startDate":
+                destination.date = newPost.start
+            case "endDate":
+                destination.date = newPost.end
+            default: break
+            }
+        }
+    }
+    
+    @IBAction func unwindToAddPostVC(sender: UIStoryboardSegue)
+    {
+        startDateButton.setTitle(newPost.start.debugDescription, for: .normal)
+        endDateButton.setTitle(newPost.end.debugDescription, for: .normal)
     }
 }

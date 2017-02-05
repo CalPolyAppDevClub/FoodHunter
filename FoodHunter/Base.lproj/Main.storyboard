@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RUg-qC-GAy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RUg-qC-GAy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -56,6 +56,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="didEndEditingText:" destination="oX8-J6-0Xs" eventType="editingDidEnd" id="RTB-nh-SXU"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OyI-JY-LDL">
                                 <rect key="frame" x="121" y="268.5" width="134" height="30"/>
@@ -76,6 +79,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="didEndEditingText:" destination="oX8-J6-0Xs" eventType="editingDidEnd" id="G5k-a5-dA2"/>
+                                </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Any other deets?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UB3-FP-UAb">
                                 <rect key="frame" x="37.5" y="418.5" width="300" height="111"/>
@@ -88,6 +94,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="didEndEditingText:" destination="oX8-J6-0Xs" eventType="editingDidEnd" id="yp0-6s-43t"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -120,7 +129,8 @@
                         <outlet property="foodTextField" destination="BuV-SI-5uI" id="LGo-91-SDk"/>
                         <outlet property="locationTextField" destination="nKH-gx-PPp" id="K4s-d1-oHR"/>
                         <outlet property="startDateButton" destination="OyI-JY-LDL" id="wwW-Q7-b6G"/>
-                        <segue destination="CFH-bD-3GP" kind="presentation" identifier="datePicker" id="oz6-9W-NM5"/>
+                        <segue destination="CFH-bD-3GP" kind="presentation" identifier="startDate" id="MTG-PO-iLs"/>
+                        <segue destination="CFH-bD-3GP" kind="presentation" identifier="endDate" id="qu9-Tg-yhV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yvq-rD-prn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -157,21 +167,18 @@
                                     <!--2017-01-28 23:11:39 +0000-->
                                 </date>
                                 <connections>
-                                    <action selector="dateChanged:" destination="CFH-bD-3GP" eventType="valueChanged" id="FWe-hR-yqE"/>
+                                    <action selector="dateChanged:" destination="CFH-bD-3GP" eventType="valueChanged" id="mgV-X6-VCu"/>
                                 </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTc-cz-7Ge">
                                 <rect key="frame" x="165" y="458" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="cancelAction:" destination="CFH-bD-3GP" eventType="touchUpInside" id="mWE-G1-dKa"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOj-k7-b1n">
                                 <rect key="frame" x="165" y="533" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="submitAction:" destination="CFH-bD-3GP" eventType="touchUpInside" id="ewi-qx-YoL"/>
+                                    <segue destination="5v3-DN-a34" kind="unwind" unwindAction="unwindToAddPostVCWithSender:" id="SAR-wd-a3T"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -198,6 +205,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UQV-8X-q4F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5v3-DN-a34" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2197.5999999999999" y="-239.73013493253376"/>
         </scene>
@@ -218,4 +226,7 @@
             <point key="canvasLocation" x="-271" y="-242"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="qu9-Tg-yhV"/>
+    </inferredMetricsTieBreakers>
 </document>
