@@ -7,5 +7,5 @@ target 'FoodHunter' do
 	pod 'Firebase/Core'
 	pod 'Firebase/Database'
 	pod 'Firebase/Auth'
-        pod 'IQKeyboardManagerSwift'
+	pod 'IQKeyboardManagerSwift', '4.0.6'
 end
