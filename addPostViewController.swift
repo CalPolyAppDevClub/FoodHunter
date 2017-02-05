@@ -57,7 +57,7 @@ class addPostViewController: UIViewController {
         case startDateButton:
             self.performSegue(withIdentifier: "startDate", sender: self)
         case endDateButton:
-            self.performSegue(withIdentifier: "endDate", sender: self)
+            self.performSegue(withIdentifier: "endDat
         default: break
         }
     }
