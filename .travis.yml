@@ -1,0 +1,7 @@
+language: objective-c
+xcode_workspace: FoodHunter.xcworkspace
+xcode_scheme: FoodHunter
+osx_image: xcode8.2
+xcode_sdk: iphonesimulator10.1
+script:
+  - xcodebuild -workspace FoodHunter.xcworkspace -scheme FoodHunter -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
