@@ -12,6 +12,7 @@ import UIKit
 class DatePickerViewController : UIViewController {
     
     var questionText: String?
+    var date: Date?
     var addPostVC: addPostViewController?
     
     @IBOutlet var titleLabel: UILabel!
@@ -28,18 +29,10 @@ class DatePickerViewController : UIViewController {
         cancelButton.setTitle("Cancel", for: .normal)
         submitButton.setTitle("Submit", for: .normal)
         datePicker.datePickerMode = .dateAndTime
-        
     }
     
-    @IBAction func dateChanged(_ sender: Any) {
-
-        
+    @IBAction func dateChanged(_ sender: UIDatePicker) {
+        date = sender.date
     }
     
-    @IBAction func cancelAction(_ sender: Any) {
-    }
-    
-    
-    @IBAction func submitAction(_ sender: Any) {
-    }
 }
