@@ -1,4 +1,6 @@
 # FoodHunter
+[![Build Status](https://travis-ci.org/CalPolyAppDevClub/FoodHunter.svg?branch=master)](https://travis-ci.org/CalPolyAppDevClub/FoodHunter)
+
 Finding Food For Friendly Famished Fellows
 
 # Development Install
