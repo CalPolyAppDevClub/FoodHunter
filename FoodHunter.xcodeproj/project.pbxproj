@@ -36,6 +36,7 @@
 		6B7E0E521DD7C9E600A9C2A8 /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		6B7E0E541DD7CDFD00A9C2A8 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		6B7E0E561DD7D13400A9C2A8 /* PostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
+		8994C1D21E4FC8B50014FA36 /* FoodHunter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodHunter.entitlements; sourceTree = "<group>"; };
 		6BE34C6C1E4FD2DB00BE0E98 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A6871C231E34269900463638 /* addPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = addPostViewController.swift; path = ../addPostViewController.swift; sourceTree = "<group>"; };
 		A6FAEAC11E3D5C60002B9D39 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +78,7 @@
 		6B699D161DCEAEF4007562C5 /* FoodHunter */ = {
 			isa = PBXGroup;
 			children = (
+				8994C1D21E4FC8B50014FA36 /* FoodHunter.entitlements */,
 				6B699D171DCEAEF4007562C5 /* AppDelegate.swift */,
 				6B699D1B1DCEAEF4007562C5 /* Main.storyboard */,
 				A6FAEAC11E3D5C60002B9D39 /* DatePickerViewController.swift */,
@@ -149,6 +151,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = QH4RJ755GR;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -371,6 +378,7 @@
 			baseConfigurationReference = C29068C101A0F6766A14A484 /* Pods-FoodHunter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FoodHunter/FoodHunter.entitlements;
 				DEVELOPMENT_TEAM = QH4RJ755GR;
 				INFOPLIST_FILE = FoodHunter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -385,6 +393,7 @@
 			baseConfigurationReference = 031F1ACF7B1F0F9A517E7D94 /* Pods-FoodHunter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FoodHunter/FoodHunter.entitlements;
 				DEVELOPMENT_TEAM = QH4RJ755GR;
 				INFOPLIST_FILE = FoodHunter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

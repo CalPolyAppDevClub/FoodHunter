@@ -14,10 +14,33 @@ class PostTableViewController: UITableViewController{
     
     @IBOutlet var addBarButton: UIBarButtonItem!
     
+    let ref = FIRDatabase.database().reference(withPath: "posts")
     var currentPosts: [Post] = []
+    var pastPosts = 0
     
     override func viewDidLoad() {
         
+        ref.queryOrdered(byChild: "start").observe(.value, with: { snapshot in
+            var newPosts: [Post] = []
+            
+            for post in snapshot.children {
+                let post = Post(snapshot: post as! FIRDataSnapshot)
+                if post.start.description <= Date().description {
+                    newPosts.append(post)
+                    self.pastPosts += 1
+                } else {
+                    newPosts.insert(post, at: 0)
+                }
+            }
+            
+            self.currentPosts = newPosts
+            self.tableView.reloadData()
+        })
+
+        let nib = UINib(nibName: "PostCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "PostCell")
+        
+        /*
         print("view did load!")
         
         let postOne = Post()
@@ -34,6 +57,7 @@ class PostTableViewController: UITableViewController{
         
         let nib = UINib(nibName: "PostCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "PostCell")
+        */
     }
     
     func setupDBLink() {
@@ -51,7 +75,7 @@ class PostTableViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currentPosts.count
+        return currentPosts.count - pastPosts
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
