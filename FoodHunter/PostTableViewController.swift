@@ -40,8 +40,6 @@ class PostTableViewController: UITableViewController{
         let ref = FIRDatabase.database().reference()
         let posts = ref.child("posts")
         posts.observe(FIRDataEventType.value, with: {datasnapshot in
-            
-            print(datasnapshot.value.debugDescription)
         })
     }
     

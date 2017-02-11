@@ -12,8 +12,8 @@ import UIKit
 class DatePickerViewController : UIViewController {
     
     var questionText: String?
+    var isStartDatePicker: Bool = true
     var date: Date?
-    var addPostVC: addPostViewController?
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
@@ -35,4 +35,24 @@ class DatePickerViewController : UIViewController {
         date = sender.date
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier, let addPostVC = segue.destination as? addPostViewController
+        {
+            switch (identifier)
+            {
+                case "unwindSubmit":
+                if isStartDatePicker
+                {
+                    addPostVC.newPost.start = datePicker.date
+                }
+                else
+                {
+                    addPostVC.newPost.end = datePicker.date
+                }
+                
+            default:
+                break
+            }
+        }
+    }
 }
