@@ -173,12 +173,15 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTc-cz-7Ge">
                                 <rect key="frame" x="165" y="458" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="5v3-DN-a34" kind="unwind" identifier="unwindCancel" unwindAction="unwindToAddPostVCWithSender:" id="KRH-uu-h4M"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOj-k7-b1n">
                                 <rect key="frame" x="165" y="533" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="5v3-DN-a34" kind="unwind" unwindAction="unwindToAddPostVCWithSender:" id="SAR-wd-a3T"/>
+                                    <segue destination="5v3-DN-a34" kind="unwind" identifier="unwindSubmit" unwindAction="unwindToAddPostVCWithSender:" id="hAl-f1-zbj"/>
                                 </connections>
                             </button>
                         </subviews>

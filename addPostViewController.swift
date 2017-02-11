@@ -65,23 +65,28 @@ class addPostViewController: UIViewController {
     //When a segue is triggered
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let identifier = segue.identifier {
+        if let identifier = segue.identifier
+        {
+            let datePickerVC = segue.destination as! DatePickerViewController
             
-            let destination = segue.destination as! DatePickerViewController
-            
-            switch(identifier) {
+            switch (identifier)
+            {
             case "startDate":
-                destination.date = newPost.start
+                datePickerVC.isStartDatePicker = true
+                datePickerVC.questionText = "Pick a start date."
+                break
             case "endDate":
-                destination.date = newPost.end
-            default: break
+                datePickerVC.isStartDatePicker = false
+                datePickerVC.questionText = "Pick an end date."
+            default:
+                break
             }
         }
     }
     
     @IBAction func unwindToAddPostVC(sender: UIStoryboardSegue)
     {
-        startDateButton.setTitle(newPost.start.debugDescription, for: .normal)
-        endDateButton.setTitle(newPost.end.debugDescription, for: .normal)
+        startDateButton.setTitle(convertDate(date: newPost.start), for: .normal)
+        endDateButton.setTitle(convertDate(date: newPost.end), for: .normal)
     }
 }

@@ -18,15 +18,10 @@ class PostCell: UITableViewCell {
     func setup(record: Post) {
         foodLabel.text = record.food
         
-        startLabel.text = PostCell.convertDate(date: record.start)
+        startLabel.text = convertDate(date: record.start)
         
         locationLabel.text = record.location.alias
     }
     
-    static func convertDate(date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE, MMM d @ h:mma"
-        let prettyDate = formatter.string(from: date)
-        return prettyDate
-    }
+    
 }
