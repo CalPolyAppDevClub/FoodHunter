@@ -19,6 +19,7 @@
 		6B7E0E571DD7D13400A9C2A8 /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7E0E561DD7D13400A9C2A8 /* PostTableViewController.swift */; };
 		A6871C241E34269900463638 /* addPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6871C231E34269900463638 /* addPostViewController.swift */; };
 		A6FAEAC21E3D5C60002B9D39 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FAEAC11E3D5C60002B9D39 /* DatePickerViewController.swift */; };
+		CC962F6D1E4FCEA80015239E /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC962F6C1E4FCEA80015239E /* PostDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		A6871C231E34269900463638 /* addPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = addPostViewController.swift; path = ../addPostViewController.swift; sourceTree = "<group>"; };
 		A6FAEAC11E3D5C60002B9D39 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		C29068C101A0F6766A14A484 /* Pods-FoodHunter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodHunter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodHunter/Pods-FoodHunter.debug.xcconfig"; sourceTree = "<group>"; };
+		CC962F6C1E4FCEA80015239E /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		E9BF1F943D3C1DC34F62E458 /* Pods_FoodHunter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodHunter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 				6B699D201DCEAEF4007562C5 /* LaunchScreen.storyboard */,
 				6B699D231DCEAEF4007562C5 /* Info.plist */,
 				6B195DCC1DD7DF920030E2DD /* GoogleService-Info.plist */,
+				CC962F6C1E4FCEA80015239E /* PostDetailViewController.swift */,
 			);
 			path = FoodHunter;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B699D181DCEAEF4007562C5 /* AppDelegate.swift in Sources */,
+				CC962F6D1E4FCEA80015239E /* PostDetailViewController.swift in Sources */,
 				6B7E0E571DD7D13400A9C2A8 /* PostTableViewController.swift in Sources */,
 				A6FAEAC21E3D5C60002B9D39 /* DatePickerViewController.swift in Sources */,
 				6B7E0E511DD7C7B100A9C2A8 /* Post.swift in Sources */,

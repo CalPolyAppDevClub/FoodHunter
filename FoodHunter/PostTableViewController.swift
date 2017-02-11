@@ -71,4 +71,15 @@ class PostTableViewController: UITableViewController{
             return UITableViewCell()
         }
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let selectedPost = currentPosts[indexPath.row]
+        
+        let theVC = PostDetailViewController()
+        theVC.post = selectedPost
+        show(theVC, sender: nil)
+        
+        
+    }
 }
