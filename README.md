@@ -1,7 +1,7 @@
 # FoodHunter
 [![Build Status](https://travis-ci.org/CalPolyAppDevClub/FoodHunter.svg?branch=master)](https://travis-ci.org/CalPolyAppDevClub/FoodHunter)
 
-Finding Food For Friendly Famished Fellows
+Finding Food For Friendly Famished Fellows - Being a college student can be hard, not to mention hungry work. Finding free food has always been the goal, but now we have the technology to make it happen. FoodHunter allows you to offer and find free food near or on campus from the convenience of your iPhone. 
 
 # Development Install
 ### Prerequisite
