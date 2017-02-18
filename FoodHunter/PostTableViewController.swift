@@ -20,6 +20,8 @@ class PostTableViewController: UITableViewController{
     
     override func viewDidLoad() {
         
+        updateTitle()
+        
         ref.queryOrdered(byChild: "start").observe(.value, with: { snapshot in
             var newPosts: [Post] = []
             
@@ -58,6 +60,27 @@ class PostTableViewController: UITableViewController{
         let nib = UINib(nibName: "PostCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "PostCell")
         */
+    }
+    
+    func updateTitle()
+    {
+        let hour = Calendar.current.component(.hour, from: Date())
+        
+        var meal = "free"
+        switch (hour)
+        {
+        case 0..<11:
+            meal = "breakfast"
+        case 11..<17:
+            meal = "lunch"
+        case 17..<25:
+            meal = "dinner"
+        default:
+            break
+        }
+        
+        self.title = Constants.post_table_title_prefix.appending(meal).appending("?")
+        
     }
     
     func setupDBLink() {
