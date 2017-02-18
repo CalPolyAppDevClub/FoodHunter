@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class addPostViewController: UIViewController {
     
@@ -83,6 +84,14 @@ class addPostViewController: UIViewController {
             }
         }
     }
+
+    @IBAction func addPost(_ sender: Any) {
+        let ref = FIRDatabase.database().reference().child("posts")
+        let child = ref.childByAutoId()
+        child.setValue(["food" : newPost.food, "detail" : newPost.detail, "provider" : newPost.provider, "start" : dateString(date: newPost.start), "end" : dateString(date: newPost.end), "schema" : newPost.schema])
+        child.child("location").setValue(["alias" : newPost.location.alias, "latitude" : newPost.location.latitude, "longitude" : newPost.location.longitude])
+    }
+
     
     @IBAction func unwindToAddPostVC(sender: UIStoryboardSegue)
     {
