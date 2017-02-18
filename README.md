@@ -18,7 +18,7 @@ Another option is to run: `git clone https://github.com/CocoaPods/Specs.git ~/.c
 # Updating Your Git Branch
 Add a remote branch to your local Git repository (Only need to do this once)
 ```
-git remote add upstream git@github.com:CalPolyAppDevClub/FoodHunter.git
+git remote add upstream https://github.com/CalPolyAppDevClub/FoodHunter.git
 ```
 Then pull from upstream and update your fork so you have the latest version!
 ```
