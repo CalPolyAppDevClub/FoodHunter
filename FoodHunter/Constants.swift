@@ -27,4 +27,8 @@ func dateString(date: Date) -> String {
     formatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
     let uglyDate = formatter.string(from: date)
     return uglyDate
+  
+struct Constants{
+    static let post_table_title_prefix = "What's for "
+
 }
