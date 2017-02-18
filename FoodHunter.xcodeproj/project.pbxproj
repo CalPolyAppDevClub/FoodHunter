@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		235027E0577B00F012052C1A /* Pods_FoodHunter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9BF1F943D3C1DC34F62E458 /* Pods_FoodHunter.framework */; };
 		6B195DCD1DD7DF920030E2DD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B195DCC1DD7DF920030E2DD /* GoogleService-Info.plist */; };
+		6B66F3AB1E5904E70095737D /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B66F3AA1E5904E70095737D /* Launch.storyboard */; };
+		6B66F3AD1E590D4B0095737D /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B66F3AC1E590D4A0095737D /* LaunchViewController.swift */; };
 		6B699D181DCEAEF4007562C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B699D171DCEAEF4007562C5 /* AppDelegate.swift */; };
 		6B699D1D1DCEAEF4007562C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B699D1B1DCEAEF4007562C5 /* Main.storyboard */; };
 		6B699D1F1DCEAEF4007562C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B699D1E1DCEAEF4007562C5 /* Assets.xcassets */; };
@@ -26,6 +28,8 @@
 /* Begin PBXFileReference section */
 		031F1ACF7B1F0F9A517E7D94 /* Pods-FoodHunter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodHunter.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodHunter/Pods-FoodHunter.release.xcconfig"; sourceTree = "<group>"; };
 		6B195DCC1DD7DF920030E2DD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6B66F3AA1E5904E70095737D /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Launch.storyboard; path = ../Launch.storyboard; sourceTree = "<group>"; };
+		6B66F3AC1E590D4A0095737D /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		6B699D141DCEAEF4007562C5 /* FoodHunter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodHunter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B699D171DCEAEF4007562C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B699D1C1DCEAEF4007562C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -36,8 +40,8 @@
 		6B7E0E521DD7C9E600A9C2A8 /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		6B7E0E541DD7CDFD00A9C2A8 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		6B7E0E561DD7D13400A9C2A8 /* PostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
-		8994C1D21E4FC8B50014FA36 /* FoodHunter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodHunter.entitlements; sourceTree = "<group>"; };
 		6BE34C6C1E4FD2DB00BE0E98 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8994C1D21E4FC8B50014FA36 /* FoodHunter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodHunter.entitlements; sourceTree = "<group>"; };
 		A6871C231E34269900463638 /* addPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = addPostViewController.swift; path = ../addPostViewController.swift; sourceTree = "<group>"; };
 		A6FAEAC11E3D5C60002B9D39 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		C29068C101A0F6766A14A484 /* Pods-FoodHunter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodHunter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodHunter/Pods-FoodHunter.debug.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 				8994C1D21E4FC8B50014FA36 /* FoodHunter.entitlements */,
 				6B699D171DCEAEF4007562C5 /* AppDelegate.swift */,
 				6B699D1B1DCEAEF4007562C5 /* Main.storyboard */,
+				6B66F3AA1E5904E70095737D /* Launch.storyboard */,
+				6B66F3AC1E590D4A0095737D /* LaunchViewController.swift */,
 				A6FAEAC11E3D5C60002B9D39 /* DatePickerViewController.swift */,
 				6B7E0E561DD7D13400A9C2A8 /* PostTableViewController.swift */,
 				A6871C231E34269900463638 /* addPostViewController.swift */,
@@ -187,6 +193,7 @@
 				6B195DCD1DD7DF920030E2DD /* GoogleService-Info.plist in Resources */,
 				6B699D1D1DCEAEF4007562C5 /* Main.storyboard in Resources */,
 				6B7E0E531DD7C9E600A9C2A8 /* PostCell.xib in Resources */,
+				6B66F3AB1E5904E70095737D /* Launch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +259,7 @@
 				6B7E0E511DD7C7B100A9C2A8 /* Post.swift in Sources */,
 				6BE34C6D1E4FD2DB00BE0E98 /* Constants.swift in Sources */,
 				A6871C241E34269900463638 /* addPostViewController.swift in Sources */,
+				6B66F3AD1E590D4B0095737D /* LaunchViewController.swift in Sources */,
 				6B7E0E551DD7CDFD00A9C2A8 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

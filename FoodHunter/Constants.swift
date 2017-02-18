@@ -14,3 +14,7 @@ func convertDate(date: Date) -> String {
     let prettyDate = formatter.string(from: date)
     return prettyDate
 }
+
+struct Constants{
+    static let post_table_title_prefix = "What's for "
+}
