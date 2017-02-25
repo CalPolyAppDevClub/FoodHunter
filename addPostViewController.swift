@@ -34,8 +34,6 @@ class addPostViewController: UIViewController {
     
     @IBAction func didEndEditingText(_ sender: UITextField) {
         
-        _ = self.navigationController?.popViewController(animated: true)
-        
         if let text = sender.text
         {
             switch (sender) {
