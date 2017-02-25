@@ -86,9 +86,11 @@ class addPostViewController: UIViewController {
     }
 
     @IBAction func addPost(_ sender: Any) {
+        newPost.detail = detailTextView.text
         let ref = FIRDatabase.database().reference().child("posts")
         let child = ref.childByAutoId()
-      child.setValue(["food" : newPost.food, "detail" : newPost.detail, "provider" : newPost.provider, "start" : dateString(date: newPost.start), "end" : dateString(date: newPost.end), "schema" : newPost.schema, "location" : ["alias" : newPost.location.alias, "latitude" : newPost.location.latitude, "longitude" : newPost.location.longitude]])
+        child.setValue(["food" : newPost.food, "detail" : newPost.detail, "provider" : newPost.provider, "start" : dateString(date: newPost.start), "end" : dateString(date: newPost.end), "schema" : newPost.schema, "location" : ["alias" : newPost.location.alias, "latitude" : newPost.location.latitude, "longitude" : newPost.location.longitude]])
+        self.navigationController?.popViewController(animated: true)
     }
 
     

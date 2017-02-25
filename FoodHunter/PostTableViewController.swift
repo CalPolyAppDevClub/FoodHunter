@@ -27,7 +27,7 @@ class PostTableViewController: UITableViewController{
             
             for post in snapshot.children {
                 let post = Post(snapshot: post as! FIRDataSnapshot)
-                if post.start.description > Date().description {
+                if post.end.description > Date().description {
                     newPosts.append(post)
                 }
             }
