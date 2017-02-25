@@ -24,12 +24,11 @@ class addPostViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        //setup keyboard links
-        foodTextField.becomeFirstResponder()
+        newPost.start = Date()
+        newPost.end = Date(timeIntervalSinceNow: 3600)
         
         let keyboardDismisser = UITapGestureRecognizer(target: self, action: #selector(addPostViewController.dismissKeyboard))
         self.view.addGestureRecognizer(keyboardDismisser)
-        
     }
     
     @IBAction func didEndEditingText(_ sender: UITextField) {

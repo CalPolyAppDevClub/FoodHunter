@@ -29,6 +29,14 @@ class DatePickerViewController : UIViewController {
         cancelButton.setTitle("Cancel", for: .normal)
         submitButton.setTitle("Submit", for: .normal)
         datePicker.datePickerMode = .dateAndTime
+        
+        if isStartDatePicker
+        {
+            datePicker.date = Date()
+        }
+        else{
+            datePicker.date = Date(timeIntervalSinceNow: 3600)
+        }
     }
     
     @IBAction func dateChanged(_ sender: UIDatePicker) {
