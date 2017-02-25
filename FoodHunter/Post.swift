@@ -26,6 +26,16 @@ class Post: NSObject {
     var start: Date = Date()
     var ref: FIRDatabaseReference?
     
+    var completeDetail: String {
+        var result = ""
+        result += "Provider: " + provider + "\n"
+        result += "Starts: " + convertDate(date: start) + "\n"
+        result += "Ends: " + convertDate(date: end) + "\n"
+        result += "Where: " + location.alias + "\n"
+        result += "Details: " + detail + "\n"
+        return result
+    }
+    
     init(snapshot: FIRDataSnapshot) {
         let snapshotValue = snapshot.value as! [String: AnyObject]
         detail = snapshotValue["detail"] as! String
