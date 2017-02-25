@@ -16,7 +16,6 @@ class PostTableViewController: UITableViewController{
     
     let ref = FIRDatabase.database().reference(withPath: "posts")
     var currentPosts: [Post] = []
-    var pastPosts = 0
     
     override func viewDidLoad() {
         
@@ -24,14 +23,12 @@ class PostTableViewController: UITableViewController{
         
         ref.queryOrdered(byChild: "start").observe(.value, with: { snapshot in
             var newPosts: [Post] = []
+            print("Observed")
             
             for post in snapshot.children {
                 let post = Post(snapshot: post as! FIRDataSnapshot)
-                if post.start.description <= Date().description {
+                if post.end.description > Date().description {
                     newPosts.append(post)
-                    self.pastPosts += 1
-                } else {
-                    newPosts.insert(post, at: 0)
                 }
             }
             
@@ -98,7 +95,7 @@ class PostTableViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currentPosts.count - pastPosts
+        return currentPosts.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
