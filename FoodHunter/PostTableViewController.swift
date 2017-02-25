@@ -116,12 +116,19 @@ class PostTableViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let selectedPost = currentPosts[indexPath.row]
+        //Shows a popup with the details, once Ivonne finishes the
+        //PostDetailViewController we'll use that!
+        let post = currentPosts[indexPath.row]
+        let popup: UIAlertController = UIAlertController(title: post.food, message: post.completeDetail, preferredStyle: .actionSheet)
+        popup.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
+            tableView.deselectRow(at: indexPath, animated: true)
+        }))
+        self.present(popup, animated: true, completion: nil)
+        return
         
+        let selectedPost = currentPosts[indexPath.row]
         let theVC = PostDetailViewController()
         theVC.post = selectedPost
         show(theVC, sender: nil)
-        
-        
     }
 }

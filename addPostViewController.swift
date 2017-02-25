@@ -29,9 +29,13 @@ class addPostViewController: UIViewController {
         
         let keyboardDismisser = UITapGestureRecognizer(target: self, action: #selector(addPostViewController.dismissKeyboard))
         self.view.addGestureRecognizer(keyboardDismisser)
+        
     }
     
     @IBAction func didEndEditingText(_ sender: UITextField) {
+        
+        _ = self.navigationController?.popViewController(animated: true)
+        
         if let text = sender.text
         {
             switch (sender) {
