@@ -5,7 +5,7 @@ Finding Food For Friendly Famished Fellows - Being a college student can be hard
 
 # Development Install
 ### Prerequisite
-CocoaPods is required. This project uses Alamofire, a swift networking library, and this dependency is managed through CocoaPods.     
+CocoaPods is required. 
 To install CocoaPods (from project root directory):
 ```
 sudo gem install cocoapods
